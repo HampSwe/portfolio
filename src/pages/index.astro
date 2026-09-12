@@ -21,12 +21,16 @@ import ResearchItem from "../components/ResearchItem.astro";
     <div class="hero-copy">
       <h1>Hampus Serneke</h1>
       <p class="hero-intro">
-        I am a M.Sc. student in Data Science at EPFL, Switzerland. I have a background
-        in Engineering Mathematics from Lund University, Sweden, and I was previously
-        a Summer Undergraduate Research Fellow at Caltech. I am interested in
+        I am a M.Sc. student in Data Science at <a href="https://www.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL</a>, Switzerland. I have a background
+        in Engineering Mathematics from <a href="https://www.lunduniversity.lu.se/" target="_blank" rel="noopener noreferrer">Lund University</a>, Sweden, and I was previously
+        a Summer Undergraduate Research Fellow at <a href="https://www.caltech.edu/" target="_blank" rel="noopener noreferrer">Caltech</a>. I am interested in
         reinforcement learning, computer vision, robotics and AI safety.
       </p>
-
+      <div class="hero-links">
+        <a href="https://linkedin.com/in/hampus-serneke" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/HampSwe" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Scholar</a>
+      </div>
     </div>
   </section>
 
@@ -45,9 +49,9 @@ import ResearchItem from "../components/ResearchItem.astro";
     <SectionHeading title="Education" />
 
     <div class="timeline">
-      <TimelineItem date="Sept. 2026 — July 2028" title="M.Sc. in Data Science" subtitle="École polytechnique fédérale de Lausanne, EPFL · Lausanne, Switzerland" description="Incoming master’s student at École polytechnique fédérale de Lausanne." />
-      <TimelineItem date="Aug. 2022 — June 2026" title="B.Sc. part of the Engineering Mathematics program" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Engineering Mathematics program, following two years in Computer Science and Engineering. GPA: 4.9/5.0. Coursework included mathematical statistics, matrix theory, stochastic processes, PDEs, and algorithms." />
-      <TimelineItem date="Aug. 2018 — June 2021" title="Natural Science program" subtitle="Katedralskolan · Lund, Sweden" description="High school GPA: 22.5/22.5." />
+      <TimelineItem date="Sept. 2026 — July 2028" title="M.Sc. in Data Science" logo="/logos/epfl.svg" subtitle="École polytechnique fédérale de Lausanne, EPFL · Lausanne, Switzerland" description="Incoming master’s student at École polytechnique fédérale de Lausanne." />
+      <TimelineItem date="Aug. 2022 — June 2026" title="B.Sc., Engineering Mathematics Program" logo="/logos/lth-blue.jpg" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Engineering Mathematics program, following two years in Computer Science and Engineering. GPA: 4.9/5.0. Coursework included mathematical statistics, matrix theory, stochastic processes, PDEs, and algorithms." />
+      <TimelineItem date="Aug. 2018 — June 2021" title="Natural Science program" logo="/logos/katedralskolan.png" subtitle="Katedralskolan · Lund, Sweden" description="High school GPA: 22.5/22.5." />
     </div>
   </section>
 
@@ -55,10 +59,10 @@ import ResearchItem from "../components/ResearchItem.astro";
     <SectionHeading title="Work experience" />
 
     <div class="timeline">
-      <TimelineItem date="June — Aug. 2026" title="Summer Undergraduate Research Fellow" subtitle="Caltech, AMBER Lab · Pasadena, USA" description="Researched reinforcement learning and AI safety in robotics with Dr. Pol Mestres and Prof. Aaron Ames." />
-      <TimelineItem date="Aug. 2025 — Mar. 2026" title="Teaching Assistant in Mathematics" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Led weekly calculus exercise sessions for a class of 30 engineering undergraduates." />
-      <TimelineItem date="June 2023 — May 2025" title="Machine Learning Intern" subtitle="Axis Communications, Core Technologies Analytics · Lund, Sweden" description="Developed synthetic data pipelines in Unreal Engine to reduce bias in computer vision models. Improved object detection performance, implemented a noise reduction algorithm in Python, and streamlined rendering code in C++. Worked with a team of 10 engineers, part-time during terms and full-time in summers." />
-      <TimelineItem date="Sept. 2018 — Jan. 2023" title="Coding Instructor" subtitle="Hemkodat · Sweden" description="Delivered Python, Lua, and C# courses for adolescents across Sweden, and helped onboard and train new instructors." />
+      <TimelineItem date="June — Aug. 2026" title="Summer Undergraduate Research Fellow" logo="/logos/caltech-orange.svg" subtitle="Caltech, AMBER Lab · Pasadena, USA" description="Researched reinforcement learning and AI safety in robotics with Dr. Pol Mestres and Prof. Aaron Ames." />
+      <TimelineItem date="Aug. 2025 — Mar. 2026" title="Teaching Assistant in Mathematics" logo="/logos/lth-blue.jpg" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Led weekly calculus exercise sessions for a class of 30 engineering undergraduates." />
+      <TimelineItem date="June 2023 — May 2025" title="Machine Learning Intern" logo="/logos/axis.jpg" subtitle="Axis Communications, Core Technologies Analytics · Lund, Sweden" description="Developed synthetic data pipelines in Unreal Engine to reduce bias in computer vision models. Improved object detection performance, implemented a noise reduction algorithm in Python, and streamlined rendering code in C++. Worked with a team of 10 engineers, part-time during terms and full-time in summers." />
+      <TimelineItem date="Sept. 2018 — Jan. 2023" title="Coding Instructor" logo="/logos/hemkodat.jpg" subtitle="Hemkodat · Sweden" description="Delivered Python, Lua, and C# courses for adolescents across Sweden, and helped onboard and train new instructors." />
     </div>
   </section>
 

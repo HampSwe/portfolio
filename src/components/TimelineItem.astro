@@ -4,16 +4,18 @@ interface Props {
   title: string;
   subtitle?: string;
   description?: string;
+  logo?: string;
 }
 
-const { date, title, subtitle, description } = Astro.props;
+const { date, title, subtitle, description, logo } = Astro.props;
 ---
 
-<article class="timeline-item">
-  <p class="timeline-date">{date}</p>
+<article class:list={["timeline-item", { "has-logo": logo }]}>
+  {logo && <img class="institution-logo" src={logo} alt="" width="40" height="40" loading="lazy" />}
   <div class="timeline-content">
     <h3>{title}</h3>
     {subtitle && <p class="timeline-subtitle">{subtitle}</p>}
     {description && <p class="timeline-description">{description}</p>}
   </div>
+  <p class="timeline-date">{date}</p>
 </article>

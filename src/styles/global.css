@@ -39,7 +39,7 @@ main { flex: 1; }
 .nav-list { display: flex; flex-wrap: wrap; gap: 24px; list-style: none; padding: 0; margin: 0; }
 .nav-link { color: var(--muted); text-decoration: none; padding-block: 8px; }
 .nav-link:hover, .nav-link.active { color: var(--text); text-decoration: underline; }
-.hero { text-align: center; padding-block: 42px 52px; }
+.hero { text-align: center; padding-block: 22px 52px; }
 .portrait-wrap { position: relative; width: 295px; height: 295px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; }
 .portrait {
   --zoom: 2.4;
@@ -61,6 +61,7 @@ h1 { font-size: 30px; font-weight: 500; letter-spacing: -0.025em; margin-bottom:
 h2 { font-size: 19px; font-weight: 500; margin-bottom: 20px; }
 h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 .hero-intro { margin-bottom: 0; }
+.hero-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; margin-top: 24px; font-size: 14px; }
 .section { padding-block: 30px; }
 .section-heading { border-bottom: 1px solid var(--line); margin-bottom: 22px; }
 .section-heading h2 { margin-bottom: 10px; }
@@ -71,8 +72,10 @@ h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 .research-meta span + span::before { content: "\00b7"; margin-right: 10px; }
 .research-item p, .timeline-description { margin-bottom: 0; }
 .text-link { font-size: 14px; }
-.timeline-item { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 24px; }
-.timeline-date { color: var(--muted); font-size: 13px; margin-bottom: 0; padding-top: 2px; }
+.timeline-item { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 20px; align-items: start; }
+.timeline-item.has-logo { grid-template-columns: 40px minmax(0, 1fr) 170px; }
+.institution-logo { width: 40px; height: 40px; object-fit: contain; }
+.timeline-date { color: var(--muted); font-size: 13px; margin-bottom: 0; padding-top: 2px; text-align: right; }
 .timeline-subtitle { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
 .page-intro, .contact-page { padding-top: 54px; padding-bottom: 24px; }
 .page-intro > p { max-width: 560px; }
@@ -90,14 +93,19 @@ h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 .contact-list strong { font-weight: 400; overflow-wrap: anywhere; text-decoration: underline; text-decoration-color: #a5a89e; text-underline-offset: 4px; }
 .contact-list a:hover strong { text-decoration-color: currentColor; }
 .site-footer { padding-block: 44px 30px; }
-.footer-inner { border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
 .footer-inner p { margin: 0; }
 @media (max-width: 560px) {
   .header-inner { flex-direction: column; align-items: center; gap: 14px; padding-block: 24px; }
   .nav-list { gap: 22px; justify-content: center; }
-  .hero { padding-top: 24px; padding-bottom: 32px; }
+  .hero { padding-top: 12px; padding-bottom: 32px; }
   h1 { font-size: 27px; }
-  .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+  .timeline-item { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .timeline-item.has-logo { grid-template-columns: 40px minmax(0, 1fr); column-gap: 12px; }
+  .timeline-date { grid-column: -2 / -1; grid-row: 1; }
+  .timeline-content { grid-column: -2 / -1; grid-row: 2; }
+  .institution-logo { grid-column: 1; grid-row: 1 / 3; }
   .research-item { flex-direction: column; gap: 8px; }
   .page-intro, .contact-page { padding-top: 32px; }
 }
