@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import ResearchItem from "../components/ResearchItem.astro";
+---
+
+<BaseLayout
+  title="Hampus Serneke — Data Science"
+  description="Hampus Serneke, incoming MSc student in Data Science at EPFL. Machine learning, computer vision, and robotics research."
+>
+  <section class="hero container">
+    <div class="portrait-wrap">
+      <img
+        class="portrait"
+        src="/profile.jpg"
+        alt="Portrait of Hampus Serneke"
+      />
+    </div>
+
+    <div class="hero-copy">
+      <p class="eyebrow">Incoming MSc Data Science · EPFL</p>
+      <h1>Hampus Serneke</h1>
+      <p class="hero-intro">
+        I am an incoming Data Science master’s student at EPFL with a background
+        in engineering mathematics from Lund University. My work spans computer
+        vision and synthetic data at Axis, and reinforcement learning and AI
+        safety in robotics at Caltech.
+      </p>
+
+      <div class="hero-links">
+        <a class="button button-primary" href="/projects">View projects</a>
+        <a class="button button-secondary" href="/contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHeading
+      eyebrow="Selected work"
+      title="Research output"
+      intro="Thesis work and research in geometric deep learning and robotics."
+    />
+
+    <div class="research-list">
+      <ResearchItem title="Deep Learning for Rotation Averaging in Structure from Motion" venue="Bachelor’s thesis · Lund University" year="2026" description="Bachelor’s thesis completed as part of the Engineering Mathematics program." />
+      <ResearchItem title="Reinforcement learning and AI safety in robotics" venue="AMBER Lab · Caltech" year="2026" description="Summer undergraduate research under the supervision of Dr. Pol Mestres and Prof. Aaron Ames." />
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHeading eyebrow="Background" title="Education" />
+
+    <div class="timeline">
+      <TimelineItem date="Sept. 2026 — July 2028 (expected)" title="MSc in Data Science" subtitle="EPFL · Lausanne, Switzerland" description="Incoming master’s student at École polytechnique fédérale de Lausanne." />
+      <TimelineItem date="Aug. 2022 — June 2026" title="BSc in Technology" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Engineering Mathematics program, following two years in Computer Science and Engineering. GPA: 4.9/5.0. Coursework included mathematical statistics, matrix theory, stochastic processes, PDEs, and algorithms." />
+      <TimelineItem date="Aug. 2018 — June 2021" title="Natural Science program" subtitle="Katedralskolan · Lund, Sweden" description="High school GPA: 22.5/22.5." />
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHeading eyebrow="Experience" title="Work experience" />
+
+    <div class="timeline">
+      <TimelineItem date="June — Aug. 2026" title="Summer Undergraduate Research Fellow" subtitle="Caltech, AMBER Lab · Pasadena, USA" description="Researched reinforcement learning and AI safety in robotics with Dr. Pol Mestres and Prof. Aaron Ames." />
+      <TimelineItem date="Aug. 2025 — Mar. 2026" title="Teaching Assistant in Mathematics" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Led weekly calculus exercise sessions for a class of 30 engineering undergraduates." />
+      <TimelineItem date="June 2023 — May 2025" title="Machine Learning Intern" subtitle="Axis Communications, Core Technologies Analytics · Lund, Sweden" description="Developed synthetic data pipelines in Unreal Engine to reduce bias in computer vision models. Improved object detection performance, implemented a noise reduction algorithm in Python, and streamlined rendering code in C++. Worked with a team of 10 engineers, part-time during terms and full-time in summers." />
+      <TimelineItem date="Sept. 2018 — Jan. 2023" title="Coding Instructor" subtitle="Hemkodat · Sweden" description="Delivered Python, Lua, and C# courses for adolescents across Sweden, and helped onboard and train new instructors." />
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHeading eyebrow="Beyond work" title="Extracurriculars" />
+
+    <div class="timeline">
+      <TimelineItem date="Jan. — Dec. 2023" title="Vice President" subtitle="The Computer Engineering Guild at LTH · Lund, Sweden" description="Led the board of a student guild with 1,000 members, chaired board meetings, and managed administration." />
+      <TimelineItem date="2019" title="European Union Science Olympiad" subtitle="Portugal" description="Won the national qualifiers and competed at the European Union Science Olympiad." />
+      <TimelineItem date="Open source" title="PyRoMA contributor" subtitle="Geometric deep learning · PyTorch" description="Implemented a more stable geodesic distance loss function in the PyRoMA framework." />
+      <TimelineItem date="Beyond engineering" title="Theoretical philosophy & teaching" subtitle="Lund University · Sweden" description="Studied theoretical philosophy at Lund University and worked as a substitute teacher after high school." />
+    </div>
+  </section>
+</BaseLayout>

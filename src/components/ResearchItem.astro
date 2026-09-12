@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  venue?: string;
+  year?: string;
+  description?: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+const {
+  title,
+  venue,
+  year,
+  description,
+  href,
+  linkLabel = "View"
+} = Astro.props;
+---
+
+<article class="research-item">
+  <div>
+    <div class="research-meta">
+      {venue && <span>{venue}</span>}
+      {year && <span>{year}</span>}
+    </div>
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+  </div>
+
+  {href && (
+    <a class="text-link" href={href} target="_blank" rel="noreferrer">
+      {linkLabel} ↗
+    </a>
+  )}
+</article>

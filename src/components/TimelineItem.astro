@@ -1,0 +1,19 @@
+---
+interface Props {
+  date: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
+}
+
+const { date, title, subtitle, description } = Astro.props;
+---
+
+<article class="timeline-item">
+  <p class="timeline-date">{date}</p>
+  <div class="timeline-content">
+    <h3>{title}</h3>
+    {subtitle && <p class="timeline-subtitle">{subtitle}</p>}
+    {description && <p class="timeline-description">{description}</p>}
+  </div>
+</article>
