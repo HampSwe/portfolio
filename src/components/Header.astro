@@ -4,7 +4,7 @@ const pathname = Astro.url.pathname;
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/cv.pdf", label: "CV" },
+  { href: "/cv", label: "CV" },
   { href: "/contact", label: "Contact" }
 ];
 
@@ -22,7 +22,6 @@ const isActive = (href: string) =>
           <li>
             <a
               href={link.href}
-              download={link.label === "CV" ? "Hampus-Serneke-CV.pdf" : undefined}
               class:list={["nav-link", { active: isActive(link.href) }]}
             >
               {link.label}

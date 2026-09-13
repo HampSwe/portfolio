@@ -1,3 +1,13 @@
 ---
-return Astro.redirect("/cv.pdf");
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+
+<BaseLayout title="CV — Hampus Serneke" description="Download Hampus Serneke’s resume or CV.">
+  <section class="page-intro container">
+    <h1>CV</h1>
+    <div class="cv-downloads">
+      <a href="/cv.pdf" download="Hampus_Serneke_Resume.pdf">Download Resume (1 page)</a>
+      <a href="/cv.pdf" download="Hampus_Serneke_CV.pdf">Download CV (2 pages)</a>
+    </div>
+  </section>
+</BaseLayout>
