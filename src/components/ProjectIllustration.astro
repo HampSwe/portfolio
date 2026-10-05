@@ -1,0 +1,64 @@
+---
+interface Props { index: number; }
+const { index } = Astro.props;
+const id = `project-art-${index}`;
+const colors = ["#ccd8e2", "#d4d8cd", "#e4d2c4", "#d0d6e2", "#ddd6df", "#cddbd6"];
+---
+
+<!-- Decorative illustrations, not screenshots or research results. -->
+<svg class="project-illustration" viewBox="0 0 200 150" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id={`${id}-wash`} cx="30%" cy="20%" r="95%">
+      <stop stop-color="#faf8f0" />
+      <stop offset="1" stop-color={colors[index]} />
+    </radialGradient>
+    <filter id={`${id}-grain`} x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed={index + 10} stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="3" intercept="-1" />
+        <feFuncG type="linear" slope="3" intercept="-1" />
+        <feFuncB type="linear" slope="3" intercept="-1" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="200" height="150" fill={`url(#${id}-wash)`} />
+  <g fill="none" stroke="#40566b" stroke-width="1.2" opacity="0.75">
+    {index === 0 && <>
+      <circle cx="100" cy="75" r="44" />
+      <ellipse cx="100" cy="75" rx="22" ry="44" transform="rotate(30 100 75)" />
+      <ellipse cx="100" cy="75" rx="44" ry="17" transform="rotate(-20 100 75)" />
+      <path d="M61 95Q94 37 140 60" stroke-width="2.5" />
+    </>}
+    {index === 1 && <>
+      <path d="M48 104V49L99 25L152 50V105L100 128Z M48 49L100 77L152 50 M100 77V128" />
+      <path d="M58 100V76L84 90V115 M112 62V42L137 54V70 M112 111V94L143 77V95Z" />
+    </>}
+    {index === 2 && <>
+      <path d="M72 27H128V83L111 101V122H89V101L72 83Z M72 83H128 M85 128H116" />
+      {[ [86,43], [109,47], [96,64], [116,70], [84,74] ].map(([cx,cy]) => <circle cx={cx} cy={cy} r="5" />)}
+    </>}
+    {index === 3 && <>
+      <path d="M50 25H150V125H50Z M75 25V125 M100 25V125 M125 25V125 M50 50H150 M50 75H150 M50 100H150" opacity="0.3" />
+      <path d="M63 112H137V63H87V38" stroke-width="2.5" />
+      <circle cx="63" cy="112" r="4" fill="#40566b" />
+      <circle cx="87" cy="38" r="5" />
+    </>}
+    {index === 4 && <>
+      <path d="M43 40H136V88H79L62 102V88H43Z M145 62H158V112H139L124 124V112H92V98" />
+      <path d="M58 55H117 M58 66H123 M58 77H97" stroke-width="2" />
+    </>}
+    {index === 5 && <>
+      <path d="M43 30V119H160 M51 106C80 100 91 70 112 62S143 58 156 37" />
+      {[ [59,98], [70,104], [80,83], [93,86], [99,65], [114,71], [132,49], [144,57], [151,33] ].map(([cx,cy]) => <circle cx={cx} cy={cy} r="2.5" fill="#40566b" stroke="none" />)}
+    </>}
+  </g>
+  <rect width="200" height="150" filter={`url(#${id}-grain)`} opacity="0.19" style="mix-blend-mode: multiply" />
+</svg>
+
+<style>
+  .project-illustration { display: block; width: 160px; height: 120px; }
+  @media (max-width: 560px) {
+    .project-illustration { width: 120px; height: 90px; }
+  }
+</style>

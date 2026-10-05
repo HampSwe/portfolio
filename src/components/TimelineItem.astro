@@ -16,6 +16,7 @@ const { date, title, subtitle, description, logo } = Astro.props;
     <h3>{title}</h3>
     {subtitle && <p class="timeline-subtitle">{subtitle}</p>}
     {description && <p class="timeline-description">{description}</p>}
+    <slot />
   </div>
   <p class="timeline-date">{date}</p>
 </article>

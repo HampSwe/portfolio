@@ -1,5 +1,7 @@
 ---
 const pathname = Astro.url.pathname;
+// Set to false to restore the plain top bar.
+const showMountainHeader = false;
 
 const links = [
   { href: "/", label: "Home" },
@@ -12,7 +14,7 @@ const isActive = (href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href);
 ---
 
-<header class="site-header">
+<header class:list={["site-header", { "mountain-header": showMountainHeader }]}>
   <div class="header-inner">
     <a class="wordmark" href="/">Hampus Serneke</a>
 

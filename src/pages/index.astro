@@ -3,11 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import ResearchItem from "../components/ResearchItem.astro";
+
+// Set to true to display research output.
+const showResearchOutput = false;
 ---
 
 <BaseLayout
-  title="Hampus Serneke personal website"
-  description="I am an M.Sc. student in Data Science at EPFL in Switzerland. I have a background in Engineering Mathematics from Lund University, Sweden, and I was previously a Summer Undergraduate Research Fellow at Caltech. I am interested in reinforcement learning, computer vision, robotics and AI safety."
+  title="Hampus Serneke"
+  description="I am an M.Sc. student in Data Science at EPFL in Lausanne, Switzerland. I have a background in Engineering Mathematics from Lund University, Sweden, and I was previously a Summer Undergraduate Research Fellow at Caltech. I am particularly interested in reinforcement learning, computer vision, robotics and AI safety."
 >
   <section class="hero container">
     <div class="portrait-wrap">
@@ -21,19 +24,19 @@ import ResearchItem from "../components/ResearchItem.astro";
     <div class="hero-copy">
       <h1>Hampus Serneke</h1>
       <p class="hero-intro">
-        I am an M.Sc. student in Data Science at <a href="https://www.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL</a> in Switzerland. I have a background
+        I am an M.Sc. student in Data Science at <a href="https://www.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL</a> in Lausanne, Switzerland. I have a background
         in Engineering Mathematics from <a href="https://www.lunduniversity.lu.se/" target="_blank" rel="noopener noreferrer">Lund University</a>, Sweden, and I was previously
-        a Summer Undergraduate Research Fellow at <a href="https://www.caltech.edu/" target="_blank" rel="noopener noreferrer">Caltech</a>. I am interested in
+        a Summer Undergraduate Research Fellow at <a href="https://www.caltech.edu/" target="_blank" rel="noopener noreferrer">Caltech</a>. I am particularly interested in
         reinforcement learning, computer vision, robotics and AI safety.
       </p>
       <div class="hero-links">
         <a href="https://linkedin.com/in/hampus-serneke" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/HampSwe" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Scholar</a>
       </div>
     </div>
   </section>
 
+  {showResearchOutput && (
   <section class="section container">
     <SectionHeading
       title="Research output"
@@ -44,12 +47,15 @@ import ResearchItem from "../components/ResearchItem.astro";
       <ResearchItem title="Reinforcement learning and AI safety in robotics" venue="AMBER Lab · Caltech" year="2026" description="Summer undergraduate research under the supervision of Dr. Pol Mestres and Prof. Aaron Ames." />
     </div>
   </section>
+  )}
 
   <section class="section container">
     <SectionHeading title="Education" />
 
     <div class="timeline">
-      <TimelineItem date="Sept. 2026 — July 2028" title="M.Sc. in Data Science" logo="/logos/epfl.svg" subtitle="École polytechnique fédérale de Lausanne, EPFL · Lausanne, Switzerland" description="Incoming master’s student at École polytechnique fédérale de Lausanne." />
+      <TimelineItem date="Sept. 2026 — July 2028" title="M.Sc. in Data Science" logo="/logos/epfl.svg" subtitle="École polytechnique fédérale de Lausanne, EPFL · Lausanne, Switzerland">
+        <p class="timeline-description">Current coursework: machine learning, measure theory, math of data, foundations of data science, law of AI</p>
+      </TimelineItem>
       <TimelineItem date="Aug. 2022 — June 2026" title="B.Sc., Engineering Mathematics Program" logo="/logos/lth-blue.jpg" subtitle="Lund University, Faculty of Engineering · Lund, Sweden" description="Engineering Mathematics program, following two years in Computer Science and Engineering. GPA: 4.9/5.0. Coursework included mathematical statistics, matrix theory, stochastic processes, PDEs, and algorithms." />
       <TimelineItem date="Aug. 2018 — June 2021" title="Natural Science program" logo="/logos/katedralskolan.png" subtitle="Katedralskolan · Lund, Sweden" description="High school GPA: 22.5/22.5." />
     </div>
@@ -71,9 +77,13 @@ import ResearchItem from "../components/ResearchItem.astro";
 
     <div class="timeline">
       <TimelineItem date="Jan. — Dec. 2023" title="Vice President" subtitle="The Computer Engineering Guild at LTH · Lund, Sweden" description="Led the board of a student guild with 1,000 members, chaired board meetings, and managed administration." />
-      <TimelineItem date="2019" title="European Union Science Olympiad" subtitle="Portugal" description="Won the national qualifiers and competed at the European Union Science Olympiad." />
-      <TimelineItem date="Open source" title="PyRoMA contributor" subtitle="Geometric deep learning · PyTorch" description="Implemented a more stable geodesic distance loss function in the PyRoMA framework." />
-      <TimelineItem date="Beyond engineering" title="Theoretical philosophy & teaching" subtitle="Lund University · Sweden" description="Studied theoretical philosophy at Lund University and worked as a substitute teacher after high school." />
+    </div>
+  </section>
+  <section class="section container">
+    <SectionHeading title="Awards" />
+
+    <div class="timeline">
+      <TimelineItem date="2019" title="European Union Science Olympiad" subtitle="Portugal" description="Won the national qualifiers and received a bronze medal at the European Union Science Olympiad (2019)" />
     </div>
   </section>
   <section class="section container">

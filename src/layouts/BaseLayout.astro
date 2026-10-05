@@ -2,6 +2,10 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import "../styles/grain.css";
+
+// Set to false to restore the original flat background.
+const grainEnabled = false;
 
 interface Props {
   title: string;
@@ -24,7 +28,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=hs-serif-3" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class:list={{ "grain-theme": grainEnabled }}>
     <div class="site-shell">
       <Header />
       <main>
