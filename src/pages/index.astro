@@ -6,11 +6,14 @@ import ResearchItem from "../components/ResearchItem.astro";
 
 // Set to true to display research output.
 const showResearchOutput = false;
+
+// Set to true to display education.
+const showEducation = false;
 ---
 
 <BaseLayout
   title="Hampus Serneke"
-  description="I am an M.Sc. student in Data Science at EPFL in Lausanne, Switzerland. I have a background in Engineering Mathematics from Lund University, Sweden, and I was previously a Summer Undergraduate Research Fellow at Caltech. I am broadly interested in data science, and particularly interested in reinforcement learning, computer vision, robotics and AI safety."
+  description="I am a Data Science student at EPFL in Lausanne, Switzerland. I have a background in Engineering Mathematics from Lund University, Sweden, and I was previously a Summer Undergraduate Research Fellow at Caltech. I am broadly interested in data science, and particularly interested in reinforcement learning, computer vision, robotics and AI safety."
 >
   <section class="hero container">
     <div class="portrait-wrap">
@@ -24,7 +27,7 @@ const showResearchOutput = false;
     <div class="hero-copy">
       <h1>Hampus Serneke</h1>
       <p class="hero-intro">
-        I am an M.Sc. student in Data Science at <a href="https://www.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL</a> in Lausanne, Switzerland. I have a background
+        I am a Data Science student at <a href="https://www.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL</a> in Lausanne, Switzerland. I have a background
         in Engineering Mathematics from <a href="https://www.lunduniversity.lu.se/" target="_blank" rel="noopener noreferrer">Lund University</a>, Sweden, and I was previously
         a Summer Undergraduate Research Fellow at <a href="https://www.caltech.edu/" target="_blank" rel="noopener noreferrer">Caltech</a>. I am broadly interested in data science, and particularly interested in
         reinforcement learning, computer vision, robotics and AI safety.
@@ -49,6 +52,7 @@ const showResearchOutput = false;
   </section>
   )}
 
+  {showEducation && (
   <section class="section container">
     <SectionHeading title="Education" />
 
@@ -60,6 +64,8 @@ const showResearchOutput = false;
       <TimelineItem date="Aug. 2018 — June 2021" title="Natural Science program" logo="/logos/katedralskolan.png" subtitle="Katedralskolan · Lund, Sweden" description="High school GPA: 22.5/22.5." />
     </div>
   </section>
+
+  )}
 
   <section class="section container">
     <SectionHeading title="Work experience" />
