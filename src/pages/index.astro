@@ -4,9 +4,6 @@ import SectionHeading from "../components/SectionHeading.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import ResearchItem from "../components/ResearchItem.astro";
 
-// Set to true to display research output.
-const showResearchOutput = false;
-
 // Set to true to display education.
 const showEducation = false;
 ---
@@ -35,22 +32,33 @@ const showEducation = false;
       <div class="hero-links">
         <a href="https://linkedin.com/in/hampus-serneke" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/HampSwe" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=X0n7-0cAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
       </div>
     </div>
   </section>
 
-  {showResearchOutput && (
   <section class="section container">
-    <SectionHeading
-      title="Research output"
-    />
+    <SectionHeading title="Research" />
 
     <div class="research-list">
-      <ResearchItem title="Deep Learning for Rotation Averaging in Structure from Motion" venue="Bachelor’s thesis · Lund University" year="2026" description="Bachelor’s thesis completed as part of the Engineering Mathematics program." />
-      <ResearchItem title="Reinforcement learning and AI safety in robotics" venue="AMBER Lab · Caltech" year="2026" description="Summer undergraduate research under the supervision of Dr. Pol Mestres and Prof. Aaron Ames." />
+      <ResearchItem
+        title="Towards Probabilistically Safe Reinforcement Learning: Theory and Deployment on Humanoid and Aerial Robots"
+        hasAuthors
+        venue="Learning for Dynamics & Control Conference (L4DC) 2027"
+        status="submitted"
+      >
+        <span slot="authors">P. Mestres, V. Gabbita, J. H. K. Siu, S. A. Esteban, <strong>H. Serneke</strong>, J. W. Burdick, A. D. Ames</span>
+      </ResearchItem>
+      <ResearchItem
+        title="Deep Learning for Rotation Averaging in Structure from Motion"
+        hasAuthors
+        venue="Bachelor's Theses in Mathematical Sciences"
+        href="https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=9241178&fileOId=9241190"
+      >
+        <span slot="authors"><strong>H. Serneke</strong></span>
+      </ResearchItem>
     </div>
   </section>
-  )}
 
   {showEducation && (
   <section class="section container">

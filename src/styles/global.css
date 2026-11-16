@@ -77,6 +77,7 @@ h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 .research-item + .research-item, .timeline-item + .timeline-item { margin-top: 24px; }
 .research-meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; column-gap: 10px; margin-bottom: 4px; }
 .research-meta span + span::before { content: "\00b7"; margin-right: 10px; }
+.research-authors, .research-venue { color: var(--muted); font-size: 14px; }
 .research-item p, .timeline-description { margin-bottom: 0; }
 .text-link { font-size: 14px; }
 .timeline-item { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 20px; align-items: start; }
