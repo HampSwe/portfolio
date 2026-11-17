@@ -5,9 +5,10 @@ interface Props {
   venue?: string;
   status?: string;
   href?: string;
+  pdfHref?: string;
 }
 
-const { title, hasAuthors = false, venue, status, href } = Astro.props;
+const { title, hasAuthors = false, venue, status, href, pdfHref } = Astro.props;
 ---
 
 <article class="research-item">
@@ -19,6 +20,7 @@ const { title, hasAuthors = false, venue, status, href } = Astro.props;
     {venue && (
       <p class="research-venue">
         <em>{venue}</em>{status && `, ${status}`}
+        {pdfHref && <> · <a class="research-pdf" href={pdfHref} target="_blank" rel="noopener noreferrer">PDF</a></>}
       </p>
     )}
   </div>
